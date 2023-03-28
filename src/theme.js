@@ -17,7 +17,7 @@ export const theme = {
 		r10: "10px",
 		r26: "26px",
 		r30: "30px",
-		r50pr: "50%",
+		r50: "50%",
 	},
 	breakpoints: [
 		"320px",
@@ -66,6 +66,8 @@ export const theme = {
 		fs31: "31px",
 		fs36: "36px",
 		fs38: "38px",
+		fs41: "41px",
+		fs48: "48px",
 		fs60: "60px",
 		fs64: "64px",
 		fs84: "84px",

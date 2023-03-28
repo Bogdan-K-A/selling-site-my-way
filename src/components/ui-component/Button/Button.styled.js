@@ -21,4 +21,13 @@ export const StyledButton = styled(Link)`
 
 	cursor: pointer;
 	transition: 0.5s ease;
+
+	&:hover,
+	&:focus {
+		box-shadow: ${(p) => p.theme.shadow};
+	}
+
+	@media (max-width: 991px) {
+		display: ${({ display }) => display || ""};
+	}
 `;

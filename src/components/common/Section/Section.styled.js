@@ -1,12 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const StyledSection = styled.section`
-  padding: ${({ padding }) => padding || '0'};
-  /* background-color: ${(p) => p.background || `${p.theme.colors.white}`}; */
+	padding: ${({ padding }) => padding || "0"};
 
-  /* @media screen and (max-width: ${(p) => p.theme.breakpoints[8]}) {
-    padding: ${(p) => {
-      if (p.heroLaptop) return '140px 0 60px 0'
-    }};
-  } */
-`
+	@media (max-width: 991px) {
+		padding: ${({ mobilePadding }) => mobilePadding || "0"};
+	}
+`;

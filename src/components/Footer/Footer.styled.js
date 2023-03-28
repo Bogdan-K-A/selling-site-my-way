@@ -11,8 +11,12 @@ export const StyledFooter = styled.footer`
 `;
 
 export const StyledLogo = styled.img`
-	width: 208px;
-	height: 67px;
+	max-width: 208px;
+	max-height: 67px;
+
+	@media (max-width: 991px) {
+		padding: 20px 0 20px 0;
+	}
 `;
 
 export const StyledItem = styled.li`

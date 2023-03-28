@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-scroll";
+import { Box } from "@mui/system";
 
 export const StyledHeader = styled.header`
 	background: ${(p) => p.theme.colors.white};
@@ -8,23 +8,35 @@ export const StyledHeader = styled.header`
 	z-index: 99;
 `;
 
-export const StyledLogo = styled.img`
-	width: 208px;
-	height: 67px;
-
-	margin-right: 102px;
+export const StyledBox = styled(Box)`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 `;
 
-export const StyledItem = styled.li`
-	padding: 50px 0;
-	&:not(:last-child) {
-		margin-right: 70px;
+export const NavWrapper = styled(Box)`
+	display: flex;
+	align-items: center;
+
+	@media (max-width: 991px) {
+		justify-content: space-between;
+		width: 100%;
 	}
 `;
 
-export const StyledLink = styled(Link)`
-	padding: 50px 0;
-	cursor: pointer;
+export const StyledLogo = styled.img`
+	max-width: 208px;
+	max-height: 67px;
 
-	font-weight: ${(p) => p.theme.fontWeights.bold};
+	margin-right: 102px;
+
+	@media (max-width: 991px) {
+		padding: 20px 0 20px 0;
+	}
+`;
+
+export const DropMenuWrapper = styled.div`
+	@media (min-width: 991px) {
+		display: none;
+	}
 `;

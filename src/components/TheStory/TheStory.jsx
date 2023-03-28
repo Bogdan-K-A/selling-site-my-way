@@ -1,16 +1,47 @@
 import React from "react";
-import { Box } from "@mui/system";
 
-import { Container } from "../common/Container/Container";
+import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
 
-import { StyledImg, ContentWrapper, StyledMainText } from "./TheStory.styled";
+import {
+	StyledImg,
+	ContentWrapper,
+	StyledMainText,
+	StyledBox,
+} from "./TheStory.styled";
+
+const animation = {
+	hidden: {
+		x: -500,
+		opacity: 0,
+	},
+	visible: (custom) => ({
+		x: 0,
+		opacity: 1,
+		transition: { delay: custom * 0.2 },
+	}),
+};
+
+const animationImg = {
+	hidden: {
+		x: 500,
+		opacity: 0,
+	},
+	visible: (custom) => ({
+		x: 0,
+		opacity: 1,
+		transition: { delay: custom * 0.2 },
+	}),
+};
 
 export const TheStory = () => {
 	return (
-		<Container>
-			<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-				<ContentWrapper>
+		<MContainer
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ amount: 0.2, once: true }}>
+			<StyledBox>
+				<ContentWrapper custom={1} variants={animation}>
 					<Title margin="0 0 20px">The Story</Title>
 					<StyledMainText>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -29,10 +60,18 @@ export const TheStory = () => {
 						feugiat ac, ultricies eu dolor.
 					</p>
 				</ContentWrapper>
-				<div>
-					<StyledImg src="/images/Rectangle 10.png" alt="" />
-				</div>
-			</Box>
-		</Container>
+				<picture>
+					<source
+						media="(min-width: 991px)"
+						srcSet="../images/Rectangle_10.png"
+					/>
+					<source
+						media="(max-width: 991px)"
+						srcSet="../images/Rectangle_10@2x.png 2x"
+					/>
+					<StyledImg variants={animationImg} src="#" alt="" />
+				</picture>
+			</StyledBox>
+		</MContainer>
 	);
 };

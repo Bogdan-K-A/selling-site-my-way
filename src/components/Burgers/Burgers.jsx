@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Box } from "@mui/system";
+import { motion } from "framer-motion";
 
-import { Container } from "../common/Container/Container";
+import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
 import { Button } from "../ui-component/Button/Button";
 
@@ -13,9 +14,25 @@ import {
 	StyledList,
 	DropDitailsListTitle,
 	DropDitailsItem,
+	TitleCardMargin,
+	StyledBoxItem,
+	StyledButtonDrop,
+	StyledCloceButton,
 } from "./Burgers.styled";
 
-export const Burgers = () => {
+const animation = {
+	hidden: {
+		y: 500,
+		opacity: 0,
+	},
+	visible: (custom) => ({
+		y: 0,
+		opacity: 1,
+		transition: { delay: custom * 0.2 },
+	}),
+};
+
+export const Burgers = ({ openModal }) => {
 	const [name1, setName1] = useState("");
 	const [name2, setName2] = useState("");
 	const [name3, setName3] = useState("");
@@ -27,22 +44,6 @@ export const Burgers = () => {
 	};
 
 	const detaisHover = (e) => {
-		// if (e.currentTarget.id === "name1") {
-		// 	setName1(e.currentTarget.id);
-		// 	setName2("");
-		// 	setName3("");
-		// }
-		// if (e.currentTarget.id === "name2") {
-		// 	setName1("");
-		// 	setName2(e.currentTarget.id);
-		// 	setName3("");
-		// }
-		// if (e.currentTarget.id === "name3") {
-		// 	setName1("");
-		// 	setName2("");
-		// 	setName3(e.currentTarget.id);
-		// }
-
 		switch (e.currentTarget.id) {
 			case "name1":
 				setName1(e.currentTarget.id);
@@ -68,15 +69,32 @@ export const Burgers = () => {
 	};
 
 	return (
-		<Container>
-			<Box sx={{ display: "flex", alignItem: "center" }}>
-				<Title margin="0 auto 50px">Burgers</Title>
-			</Box>
-
+		<MContainer
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ amount: 0.2, once: true }}>
+			<motion.div custom={0.5} variants={animation}>
+				<Box sx={{ display: "flex", alignItems: "center" }}>
+					<Title margin="0 auto 50px">Burgers</Title>
+				</Box>
+			</motion.div>
 			<StyledList>
-				<StyledItem>
-					<h3>1/4 Pound Cheese</h3>
-					<StyledImg src="/images/Design-4.png" alt="" />
+				<StyledItem custom={1} variants={animation}>
+					<StyledBoxItem>
+						<TitleCardMargin>1/4 Pound Cheese</TitleCardMargin>
+
+						<picture>
+							<source
+								media="(min-width: 991px)"
+								srcSet="/images/Design-4.png"
+							/>
+							<source
+								media="(max-width: 991px)"
+								srcSet="./images/Design-4@2x.png 2x"
+							/>
+							<StyledImg src="#" alt="" />
+						</picture>
+					</StyledBoxItem>
 					{name1 && (
 						<DitailsListWrapper>
 							<DropDitailsListTitle>
@@ -87,18 +105,34 @@ export const Burgers = () => {
 								<DropDitailsItem>Lorem ipsum</DropDitailsItem>
 								<DropDitailsItem>Lorem ipsum</DropDitailsItem>
 							</ul>
-							<StyledLink onClick={close}>Reduce</StyledLink>
+							<StyledCloceButton onClick={close}>
+								Reduce
+							</StyledCloceButton>
 						</DitailsListWrapper>
 					)}
 
-					<StyledLink id="name1" onClick={detaisHover}>
-						Details
-					</StyledLink>
+					{!name1 && (
+						<StyledButtonDrop id="name1" onClick={detaisHover}>
+							Details
+						</StyledButtonDrop>
+					)}
 				</StyledItem>
 
-				<StyledItem>
-					<h3>Big Burger</h3>
-					<StyledImg src="/images/Design-4.png" alt="" />
+				<StyledItem custom={2} variants={animation}>
+					<StyledBoxItem>
+						<TitleCardMargin>Big Burger</TitleCardMargin>
+						<picture>
+							<source
+								media="(min-width: 991px)"
+								srcSet="/images/Design-4.png"
+							/>
+							<source
+								media="(max-width: 991px)"
+								srcSet="./images/Design-4@2x.png 2x"
+							/>
+							<StyledImg src="#" alt="" />
+						</picture>
+					</StyledBoxItem>
 					{name2 && (
 						<DitailsListWrapper>
 							<DropDitailsListTitle>
@@ -109,17 +143,32 @@ export const Burgers = () => {
 								<DropDitailsItem>Lorem ipsum</DropDitailsItem>
 								<DropDitailsItem>Lorem ipsum</DropDitailsItem>
 							</ul>
-							<StyledLink onClick={close}>Reduce</StyledLink>
+							<StyledCloceButton onClick={close}>
+								Reduce
+							</StyledCloceButton>
 						</DitailsListWrapper>
 					)}
-					<StyledLink id="name2" onClick={detaisHover}>
-						Details
-					</StyledLink>
+					{!name2 && (
+						<StyledButtonDrop id="name2" onClick={detaisHover}>
+							Details
+						</StyledButtonDrop>
+					)}
 				</StyledItem>
-				<StyledItem>
-					<h3>Pure Bacon</h3>
-					<StyledImg src="/images/Design-4.png" alt="" />
-
+				<StyledItem custom={3} variants={animation}>
+					<StyledBoxItem>
+						<TitleCardMargin>Pure Bacon</TitleCardMargin>
+						<picture>
+							<source
+								media="(min-width: 991px)"
+								srcSet="/images/Design-4.png"
+							/>
+							<source
+								media="(max-width: 991px)"
+								srcSet="./images/Design-4@2x.png 2x"
+							/>
+							<StyledImg src="#" alt="" />
+						</picture>
+					</StyledBoxItem>
 					{name3 && (
 						<DitailsListWrapper>
 							<DropDitailsListTitle>
@@ -130,19 +179,25 @@ export const Burgers = () => {
 								<DropDitailsItem>Lorem ipsum</DropDitailsItem>
 								<DropDitailsItem>Lorem ipsum</DropDitailsItem>
 							</ul>
-							<StyledLink onClick={close}>Reduce</StyledLink>
+							<StyledCloceButton onClick={close}>
+								Reduce
+							</StyledCloceButton>
 						</DitailsListWrapper>
 					)}
-					<StyledLink id="name3" onClick={detaisHover}>
-						Details
-					</StyledLink>
+					{!name3 && (
+						<StyledButtonDrop id="name3" onClick={detaisHover}>
+							Details
+						</StyledButtonDrop>
+					)}
 				</StyledItem>
 			</StyledList>
-			<Box sx={{ display: "flex", justifyContent: "center" }}>
-				<Button padding="9px 32px" to="">
-					Order now
-				</Button>
-			</Box>
-		</Container>
+			<motion.div custom={4} variants={animation}>
+				<Box sx={{ display: "flex", justifyContent: "center" }}>
+					<Button onClick={openModal} padding="9px 32px" to="">
+						Order now
+					</Button>
+				</Box>
+			</motion.div>
+		</MContainer>
 	);
 };

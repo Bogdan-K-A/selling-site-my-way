@@ -7,8 +7,7 @@ body {
   font-size:  ${(p) => p.theme.fontSizes.fs18};
   font-weight: ${(p) => p.theme.fontWeights.regular};
   line-height: ${(p) => p.theme.lineHeights.lh15};
-  
-  }
+    }
 
 
   /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -185,7 +184,7 @@ Tabular data
 */
 
 /**
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999188, https://bugs.webkit.org/show_bug.cgi?id=201297)
 2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 */
 

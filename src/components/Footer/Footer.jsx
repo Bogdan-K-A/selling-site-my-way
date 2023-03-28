@@ -13,7 +13,17 @@ export const Footer = () => {
 						justifyContent: "space-between",
 						alignItems: "center",
 					}}>
-					<StyledLogo src="/images/logo/Groupe 1.png" alt="" />
+					<picture>
+						<source
+							media="(min-width: 991px)"
+							srcSet="./images/logo/Groupe_1.png"
+						/>
+						<source
+							media="(max-width: 991px)"
+							srcSet="./images/logo/Groupe_1@2x.png 2x"
+						/>
+						<StyledLogo src="#" alt="" />
+					</picture>
 
 					<ul>
 						<StyledItem>Burger Factory</StyledItem>

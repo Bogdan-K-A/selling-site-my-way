@@ -20,13 +20,13 @@ export const imgData = [
 	{
 		id: 4,
 		src: "/images/Design-3.png",
-		srcX3: "/images/Design-3@2x.png",
+		srcX2: "/images/Design-3@2x.png",
 		title: "Buns",
 	},
 	{
 		id: 5,
 		src: "/images/tomato.png",
-		srcX3: "/images/tomato@2x.png",
+		srcX2: "/images/tomato@2x.png",
 		title: "Tomato",
 	},
 ];

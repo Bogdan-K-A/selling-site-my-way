@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+
 import { Section } from "./components/common/Section/Section.jsx";
 import { Layout } from "./components/common/Layout/Layout.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
@@ -8,31 +10,53 @@ import { Ingredients } from "./components/Ingredients/Ingredients.jsx";
 import { TheStory } from "./components/TheStory/TheStory.jsx";
 import { Burgers } from "./components/Burgers/Burgers.jsx";
 import { Location } from "./components/Location/Location.jsx";
+import { Modal } from "./components/Modal/Modal.jsx";
 
 function App() {
+	const [isOpenModal, setIsOpenModal] = useState(false);
+	const openModal = () => {
+		setIsOpenModal(true);
+	};
+	const closeModal = () => {
+		setIsOpenModal(false);
+	};
+
 	return (
 		<StyledApp>
-			<Header />
+			<Header openModal={openModal} />
 
 			<Layout>
-				<Section padding="0 0 75px 0">
+				<Section padding="0 0 75px 0" mobilePadding="0 0 37px 0">
 					<Hero />
 				</Section>
-				<Section id="ingredient" padding="75px 0 75px 0">
+				<Section
+					id="ingredient"
+					padding="75px 0 75px 0"
+					mobilePadding="37px 0 37px 0">
 					<Ingredients />
 				</Section>
-				<Section id="story" padding="75px 0 75px 0">
+				<Section
+					id="story"
+					padding="75px 0 75px 0"
+					mobilePadding="37px 0 37px 0">
 					<TheStory />
 				</Section>
-				<Section id="burgers" padding="75px 0 75px 0">
-					<Burgers />
+				<Section
+					id="burgers"
+					padding="75px 0 75px 0"
+					mobilePadding="37px 0 37px 0">
+					<Burgers openModal={openModal} />
 				</Section>
-				<Section id="location" padding="75px 0 150px 0">
+				<Section
+					id="location"
+					padding="75px 0 150px 0"
+					mobilePadding="37px 0 75px 0">
 					<Location />
 				</Section>
 			</Layout>
 
 			<Footer />
+			{isOpenModal && <Modal closeModal={closeModal} />}
 		</StyledApp>
 	);
 }

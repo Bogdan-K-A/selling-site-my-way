@@ -1,82 +1,111 @@
 import React, { useState } from "react";
-import { Box } from "@mui/system";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+
+import { SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 
 //STYLELIBRARES
 import "swiper/css";
 import "swiper/css/free-mode";
 
-import { Container } from "../common/Container/Container";
+import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
-import { StyledMainText, StyledSwiper } from "./Ingredients.styled";
+import {
+	StyledBox,
+	StyledBoxText,
+	StyledMainText,
+	StyledSwiper,
+	StyledText,
+} from "./Ingredients.styled";
 import { imgData } from "./imgData";
 import { IngredientItem } from "./IngredientItem";
+
+const animationLeft = {
+	hidden: {
+		x: -300,
+		opacity: 0,
+	},
+	visible: (custom) => ({
+		x: 0,
+		opacity: 1,
+		transition: { delay: custom * 0.2 },
+	}),
+};
+const animationRight = {
+	hidden: {
+		x: 300,
+		opacity: 0,
+	},
+	visible: (custom) => ({
+		x: 0,
+		opacity: 1,
+		transition: { delay: custom * 0.2 },
+	}),
+};
 
 export const Ingredients = () => {
 	const [ingredients, setIngredients] = useState(imgData);
 
 	const params = {
 		grabCursor: true,
-		slidesPerView: 4,
+		slidesPerView: 1,
 		spaceBetween: 10,
 		modules: [FreeMode],
 		className: "mySwiper",
-		// breakpoints: {
-		// 	1400: {
-		// 		slidesPerView: 4,
-		// 		spaceBetween: 40,
-		// 	},
-		// 	1024: {
-		// 		slidesPerView: 4,
-		// 		spaceBetween: 40,
-		// 	},
-		// 	768: {
-		// 		slidesPerView: 3,
-		// 		spaceBetween: 30,
-		// 	},
-		// 	640: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 20,
-		// 	},
-		// 	320: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 10,
-		// 	},
-		// },
+		breakpoints: {
+			1121: {
+				slidesPerView: 4,
+				spaceBetween: 10,
+			},
+			1120: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+			},
+			825: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			561: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			560: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+		},
 	};
 
 	return (
-		<Container>
-			<Box
-				sx={{
-					textAlign: "center",
-					width: 690,
-					margin: "0 auto 50px",
-				}}>
-				<Title margin="0 0 20px 0 ">Ingredients</Title>
-				<StyledMainText>
+		<MContainer
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ amount: 0.4, once: true }}>
+			<StyledBox>
+				<motion.div custom={1} variants={animationLeft}>
+					<Title margin="0 0 20px 0 ">Ingredients</Title>
+				</motion.div>
+				<StyledMainText custom={1} variants={animationRight}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Fusce mollis id arcu vel maximus.
 				</StyledMainText>
-			</Box>
-			{/* сделать swiper */}
+			</StyledBox>
+			<motion.div custom={1} variants={animationLeft}>
+				<StyledSwiper {...params}>
+					{ingredients.map(({ id, src, srcX2, title }) => (
+						<SwiperSlide key={id}>
+							<IngredientItem
+								src={src}
+								srcX2={srcX2}
+								title={title}
+							/>
+						</SwiperSlide>
+					))}
+				</StyledSwiper>
+			</motion.div>
 
-			<StyledSwiper {...params}>
-				{ingredients.map(({ id, src, title }) => (
-					<SwiperSlide key={id}>
-						<IngredientItem src={src} title={title} />
-					</SwiperSlide>
-				))}
-			</StyledSwiper>
-
-			<Box
-				sx={{
-					textAlign: "center",
-					width: 894,
-					margin: "0 auto",
-				}}>
-				<p>
+			<StyledBoxText>
+				<StyledText custom={2} variants={animationRight}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Mauris eget consequat lorem. Ut nec placerat purus. Fusce
 					vitae faucibus augue, non commodo elit. Integer risus orci,
@@ -86,8 +115,8 @@ export const Ingredients = () => {
 					nunc. Sed nec dignissim libero. Integer cursus leo nunc.
 					Nulla mattis interdum nunc, sed semper turpis. Cras elit
 					lorem, mollis ut feugiat ac, ultricies eu dolor.
-				</p>
-			</Box>
-		</Container>
+				</StyledText>
+			</StyledBoxText>
+		</MContainer>
 	);
 };
