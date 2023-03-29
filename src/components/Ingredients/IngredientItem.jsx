@@ -22,7 +22,7 @@ const StyledBox = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 
 	width: 229px;
