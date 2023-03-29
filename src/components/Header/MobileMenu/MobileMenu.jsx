@@ -5,7 +5,7 @@ import { ButtonClosePosition, StyledDropMenu } from "./MobileMenu.styled";
 import { Button } from "../../ui-component/Button/Button";
 import { Box } from "@mui/system";
 
-export const MobileMenu = ({ toggle, openModal }) => {
+export const MobileMenu = ({ isOpen, toggle, openModal }) => {
 	const animation = {
 		hidden: {
 			opacity: 0,

@@ -10,7 +10,6 @@ import {
 	DitailsListWrapper,
 	StyledImg,
 	StyledItem,
-	StyledLink,
 	StyledList,
 	DropDitailsListTitle,
 	DropDitailsItem,
