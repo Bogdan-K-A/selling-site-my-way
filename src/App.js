@@ -12,13 +12,19 @@ import { Burgers } from "./components/Burgers/Burgers.jsx";
 import { Location } from "./components/Location/Location.jsx";
 import { Modal } from "./components/Modal/Modal.jsx";
 
+import { bodyOveflow } from "./utils/bodyOveflow";
+
 function App() {
 	const [isOpenModal, setIsOpenModal] = useState(false);
+
 	const openModal = () => {
 		setIsOpenModal(true);
+		bodyOveflow(isOpenModal);
 	};
+
 	const closeModal = () => {
 		setIsOpenModal(false);
+		bodyOveflow(isOpenModal);
 	};
 
 	return (

@@ -7,6 +7,7 @@ body {
   font-size:  ${(p) => p.theme.fontSizes.fs18};
   font-weight: ${(p) => p.theme.fontWeights.regular};
   line-height: ${(p) => p.theme.lineHeights.lh15};
+  
     }
 
 
