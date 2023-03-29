@@ -46,11 +46,7 @@ export const Header = ({ openModal }) => {
 						<NavBar display="none" />
 
 						{isOpen ? (
-							<MobileMenu
-								isOpen={isOpen}
-								toggle={toggle}
-								openModal={openModal}
-							/>
+							<MobileMenu toggle={toggle} openModal={openModal} />
 						) : (
 							<DropMenuWrapper>
 								<AiOutlineMenu size={"2em"} onClick={toggle} />

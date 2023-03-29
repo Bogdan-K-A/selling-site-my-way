@@ -75,6 +75,8 @@ export const StyledSwiper = styled(Swiper)`
 `;
 
 export const StyledBoxText = styled(Box)`
+	position: relative;
+
 	text-align: center;
 	max-width: 894px;
 	margin: 0 auto;
@@ -83,5 +85,31 @@ export const StyledBoxText = styled(Box)`
 export const StyledText = styled(motion.p)`
 	@media (max-width: 991px) {
 		font-size: ${(p) => p.theme.fontSizes.fs18};
+	}
+`;
+
+export const IconPosition = styled(motion.div)`
+	position: absolute;
+	top: -30%;
+	left: 49%;
+	> svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	@media (max-width: 991px) {
+		top: -25%;
+	}
+	@media (max-width: 740px) {
+		top: -20%;
+	}
+	@media (max-width: 640px) {
+		top: -17%;
+	}
+	@media (max-width: 530px) {
+		top: -13%;
+	}
+	@media (max-width: 420px) {
+		top: -10%;
 	}
 `;

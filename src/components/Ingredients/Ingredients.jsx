@@ -10,15 +10,19 @@ import "swiper/css/free-mode";
 
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
+import { imgData } from "./imgData";
+import { IngredientItem } from "./IngredientItem";
+
+import { TbHandFinger } from "react-icons/tb";
+
 import {
 	StyledBox,
 	StyledBoxText,
 	StyledMainText,
 	StyledSwiper,
 	StyledText,
+	IconPosition,
 } from "./Ingredients.styled";
-import { imgData } from "./imgData";
-import { IngredientItem } from "./IngredientItem";
 
 const animationLeft = {
 	hidden: {
@@ -105,6 +109,19 @@ export const Ingredients = () => {
 			</motion.div>
 
 			<StyledBoxText>
+				<IconPosition
+					animate={{
+						x: [0, 50, -50, 0],
+					}}
+					transition={{
+						duration: 2,
+						ease: "easeInOut",
+						times: [0.3, 0.2, 0, 0.2, 0.3],
+						repeat: Infinity,
+						repeatDelay: 2,
+					}}>
+					<TbHandFinger />
+				</IconPosition>
 				<StyledText custom={2} variants={animationRight}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Mauris eget consequat lorem. Ut nec placerat purus. Fusce
