@@ -5,16 +5,25 @@ import { ButtonClosePosition, StyledDropMenu } from "./MobileMenu.styled";
 import { Button } from "../../ui-component/Button/Button";
 import { Box } from "@mui/system";
 
-export const MobileMenu = ({ toggle, openModal }) => {
-	return (
-		<StyledDropMenu
-			initial={{ opacity: 0, scale: 0.5 }}
-			animate={{ opacity: 1, scale: 1 }}
-			transition={{
+export const MobileMenu = ({ isOpen, toggle, openModal }) => {
+	const animation = {
+		hidden: {
+			opacity: 0,
+			x: 100,
+		},
+		visible: {
+			x: 0,
+			opacity: 1,
+			transition: {
 				duration: 0.8,
 				delay: 0.5,
 				ease: [0, 0.71, 0.2, 1.01],
-			}}>
+			},
+		},
+	};
+
+	return (
+		<StyledDropMenu initial="hidden" animate="visible" variants={animation}>
 			<ButtonClosePosition>
 				<GrClose onClick={toggle} size="34px" />
 			</ButtonClosePosition>
