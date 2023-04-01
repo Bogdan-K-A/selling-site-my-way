@@ -22,6 +22,7 @@ import {
 	StyledSwiper,
 	StyledText,
 	IconPosition,
+	StyledSwiperSlide,
 } from "./Ingredients.styled";
 
 const animationLeft = {
@@ -65,6 +66,7 @@ export const Ingredients = () => {
 				slidesPerView: 3,
 				spaceBetween: 10,
 			},
+
 			825: {
 				slidesPerView: 2,
 				spaceBetween: 10,
@@ -97,13 +99,13 @@ export const Ingredients = () => {
 			<motion.div custom={1} variants={animationLeft}>
 				<StyledSwiper {...params}>
 					{ingredients.map(({ id, src, srcX2, title }) => (
-						<SwiperSlide key={id}>
+						<StyledSwiperSlide key={id}>
 							<IngredientItem
 								src={src}
 								srcX2={srcX2}
 								title={title}
 							/>
-						</SwiperSlide>
+						</StyledSwiperSlide>
 					))}
 				</StyledSwiper>
 			</motion.div>

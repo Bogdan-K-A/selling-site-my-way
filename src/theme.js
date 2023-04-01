@@ -13,6 +13,7 @@ export const theme = {
 	whiteShadowLeft:
 		"transparent linear-gradient(90deg, #FFFFFF 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;",
 	shadow: "0px 3px 6px #00000029",
+	shadowBtn: "rgba(0, 0, 0, 0.6) 5px 7px 18px;",
 	radii: {
 		r10: "10px",
 		r26: "26px",

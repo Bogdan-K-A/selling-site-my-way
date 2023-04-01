@@ -5,6 +5,9 @@ export const StyledContainer = styled.div`
 	padding: 0 25px;
 	margin: 0 auto;
 
+	@media (max-width: 1120px) {
+		width: 100vw;
+	}
 	@media (max-width: 390px) {
 		padding: 0 15px;
 	}

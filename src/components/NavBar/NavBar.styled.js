@@ -22,6 +22,7 @@ export const StyledList = styled.ul`
 
 export const StyledItem = styled.li`
 	padding: 50px 0;
+
 	&:not(:last-child) {
 		margin-right: 70px;
 	}

@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
+
+// map
+import { Icon } from "leaflet";
+import { Marker, Popup, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
 
-import {
-	PositionBox,
-	RelativeBox,
-	StyledBox,
-	StyledImg,
-	StyledImgLocation,
-	StyledItem,
-	StyledList,
-} from "./Location.styled";
+import { StyledItem, StyledList, StyledMap } from "./Location.styled";
 
 const animationLeft = {
 	hidden: {
@@ -39,6 +36,13 @@ const animationRight = {
 };
 
 export const Location = () => {
+	const position = [46.52428262072865, 6.633050444374937];
+
+	const customIcon = new Icon({
+		iconUrl: "./images/Design@2x.png",
+		iconSize: [33, 30],
+	});
+
 	return (
 		<MContainer
 			initial="hidden"
@@ -56,32 +60,21 @@ export const Location = () => {
 					<StyledItem>1005 Lausanne</StyledItem>
 					<StyledItem>021 800 00 00</StyledItem>
 				</StyledList>
-				<RelativeBox>
-					<picture>
-						<source
-							media="(min-width: 991px)"
-							srcSet="/images/Image_1.png"
-						/>
-						<source
-							media="(max-width: 991px)"
-							srcSet="./images/Image_1@2x.png 2x"
-						/>
-						<StyledImg src="#" alt="" />
-					</picture>
-					<PositionBox>
-						<picture>
-							<source
-								media="(min-width: 991px)"
-								srcSet="/images/Design.png"
-							/>
-							<source
-								media="(max-width: 991px)"
-								srcSet="./images/Design@2x.png 2x"
-							/>
-							<StyledImgLocation src="#" alt="" />
-						</picture>
-					</PositionBox>
-				</RelativeBox>
+
+				<StyledMap center={position} zoom={16}>
+					<TileLayer
+						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors...'
+						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+					/>
+					<TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
+					<Marker position={position} icon={customIcon}>
+						<Popup>
+							<h2>Burger Factory</h2>
+							<p>Pl. de la Riponne 10</p>
+							<p>1005 Lausanne</p>
+						</Popup>
+					</Marker>
+				</StyledMap>
 			</motion.div>
 		</MContainer>
 	);

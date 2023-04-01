@@ -7,6 +7,7 @@ export const StyledHero = styled(motion.div)`
 	max-height: 600px;
 	padding: 50px 0 0 0;
 	margin-bottom: 100px;
+	margin-top: 127px;
 
 	background-image: url("/images/Tracé_1.svg");
 	background-size: cover;
@@ -15,6 +16,7 @@ export const StyledHero = styled(motion.div)`
 
 	@media (max-width: 991px) {
 		margin-bottom: 0;
+		margin-top: 67px;
 	}
 `;
 

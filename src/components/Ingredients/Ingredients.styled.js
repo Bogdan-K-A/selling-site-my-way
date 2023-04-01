@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 
 export const StyledMainText = styled(motion.p)`
@@ -29,6 +29,8 @@ export const StyledSwiper = styled(Swiper)`
 		max-width: 900px;
 	}
 	@media (max-width: 991px) {
+		/* width: 80vw; */
+		/* max-width: 800px; */
 		max-width: 520px;
 	}
 
@@ -71,6 +73,12 @@ export const StyledSwiper = styled(Swiper)`
 		@media (max-width: 560px) {
 			display: none;
 		}
+	}
+`;
+
+export const StyledSwiperSlide = styled(SwiperSlide)`
+	@media (max-width: 991px) and (min-width: 561px) {
+		transform: translate3d(-123px, 0px, 0px) !important;
 	}
 `;
 

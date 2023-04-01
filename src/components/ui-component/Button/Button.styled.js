@@ -24,7 +24,7 @@ export const StyledButton = styled(Link)`
 
 	&:hover,
 	&:focus {
-		box-shadow: ${(p) => p.theme.shadow};
+		box-shadow: ${(p) => p.theme.shadowBtn};
 	}
 
 	@media (max-width: 991px) {

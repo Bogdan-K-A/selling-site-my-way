@@ -2,10 +2,14 @@ import styled from "styled-components";
 import { Box } from "@mui/system";
 
 export const StyledHeader = styled.header`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
 	background: ${(p) => p.theme.colors.white};
 
 	box-shadow: ${(p) => p.theme.shadow};
-	z-index: 99;
+	z-index: 9999;
 `;
 
 export const StyledBox = styled(Box)`
