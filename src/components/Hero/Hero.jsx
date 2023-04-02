@@ -39,6 +39,7 @@ const animationImg = {
 export const Hero = () => {
 	return (
 		<StyledHero
+			id="hero"
 			initial="hidden"
 			whileInView="visible"
 			viewport={{ once: true }}>

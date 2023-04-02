@@ -12,7 +12,7 @@ export const NavBar = ({ display, toggle }) => {
 							to="ingredient"
 							spy={true}
 							smooth={true}
-							offset={-10}
+							offset={-90}
 							duration={500}>
 							INGREDIENT
 						</StyledLink>
@@ -34,7 +34,7 @@ export const NavBar = ({ display, toggle }) => {
 							to="burgers"
 							spy={true}
 							smooth={true}
-							offset={-10}
+							offset={-90}
 							duration={500}>
 							BURGERS
 						</StyledLink>
@@ -45,7 +45,7 @@ export const NavBar = ({ display, toggle }) => {
 							to="location"
 							spy={true}
 							smooth={true}
-							offset={-10}
+							offset={-90}
 							duration={500}>
 							LOCATION
 						</StyledLink>

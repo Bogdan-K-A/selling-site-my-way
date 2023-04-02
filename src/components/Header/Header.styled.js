@@ -34,6 +34,7 @@ export const StyledLogo = styled.img`
 
 	margin-right: 102px;
 
+	cursor: pointer;
 	@media (max-width: 991px) {
 		padding: 20px 0 20px 0;
 	}

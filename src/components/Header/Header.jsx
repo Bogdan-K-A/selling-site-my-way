@@ -1,4 +1,3 @@
-import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Container } from "../common/Container/Container.jsx";
 import { NavBar } from "../NavBar/NavBar.jsx";
@@ -16,6 +15,7 @@ import {
 	StyledHeader,
 	StyledLogo,
 } from "./Header.styled";
+import { Link } from "react-scroll";
 
 export const Header = ({ openModal }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,12 @@ export const Header = ({ openModal }) => {
 			<Container>
 				<StyledBox>
 					<NavWrapper>
-						<a href="">
+						<Link
+							to="hero"
+							spy={true}
+							smooth={true}
+							offset={-200}
+							duration={500}>
 							<picture>
 								<source
 									media="(min-width: 991px)"
@@ -42,7 +47,7 @@ export const Header = ({ openModal }) => {
 								/>
 								<StyledLogo src="#" alt="" />
 							</picture>
-						</a>
+						</Link>
 						<NavBar display="none" />
 
 						{isOpen ? (

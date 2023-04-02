@@ -20,11 +20,13 @@ export const StyledButton = styled(Link)`
 	border-radius: ${(p) => p.theme.radii.r10};
 
 	cursor: pointer;
-	transition: 0.5s ease;
+	transition: 0.3s ease;
 
 	&:hover,
 	&:focus {
 		box-shadow: ${(p) => p.theme.shadowBtn};
+		font-size: calc(3px + 1vw);
+		transition: 0.3s ease;
 	}
 
 	@media (max-width: 991px) {

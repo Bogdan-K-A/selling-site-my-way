@@ -78,6 +78,13 @@ export const StyledButtonDrop = styled.p`
 	margin-left: auto;
 
 	cursor: pointer;
+	transition: 0.3s ease;
+
+	:hover,
+	:focus {
+		font-size: calc(4px + 1vw);
+		transition: 0.3s ease;
+	}
 `;
 
 export const StyledCloceButton = styled(StyledButtonDrop)`

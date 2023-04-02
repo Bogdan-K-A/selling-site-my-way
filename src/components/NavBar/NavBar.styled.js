@@ -23,6 +23,11 @@ export const StyledList = styled.ul`
 export const StyledItem = styled.li`
 	padding: 50px 0;
 
+	.active {
+		color: ${(p) => p.theme.colors.prymaryBtnColor};
+		transition: 0.3s ease;
+	}
+
 	&:not(:last-child) {
 		margin-right: 70px;
 	}
@@ -48,6 +53,12 @@ export const StyledLink = styled(Link)`
 	cursor: pointer;
 
 	font-weight: ${(p) => p.theme.fontWeights.bold};
+
+	:hover,
+	:focus {
+		color: ${(p) => p.theme.colors.prymaryBtnColor};
+		transition: 0.3s ease;
+	}
 
 	@media (max-width: 991px) {
 		padding: 0;
