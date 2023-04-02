@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
 	background: ${(p) => p.theme.colors.white};
 
 	box-shadow: ${(p) => p.theme.shadow};
-	z-index: 9999;
+	z-index: 99;
 `;
 
 export const StyledBox = styled(Box)`

@@ -42,6 +42,7 @@ export const StyledMap = styled(MapContainer)`
 	height: 52vh;
 	border-radius: 30px;
 	margin: 0 auto;
+	z-index: 98;
 
 	@media (max-width: 884px) {
 		max-width: 677px;
