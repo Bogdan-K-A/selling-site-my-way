@@ -2,6 +2,7 @@ import React from "react";
 
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
+import { animation, animationImg } from "../../animate/animate";
 
 import {
 	StyledImg,
@@ -9,30 +10,6 @@ import {
 	StyledMainText,
 	StyledBox,
 } from "./TheStory.styled";
-
-const animation = {
-	hidden: {
-		x: -500,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
-
-const animationImg = {
-	hidden: {
-		x: 500,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
 
 export const TheStory = () => {
 	return (

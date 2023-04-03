@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import { SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 
 //STYLELIBRARES
@@ -12,6 +11,7 @@ import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
 import { imgData } from "./imgData";
 import { IngredientItem } from "./IngredientItem";
+import { animationLeft, animationRight } from "../../animate/animate";
 
 import { TbHandFinger } from "react-icons/tb";
 
@@ -24,29 +24,6 @@ import {
 	IconPosition,
 	StyledSwiperSlide,
 } from "./Ingredients.styled";
-
-const animationLeft = {
-	hidden: {
-		x: -300,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
-const animationRight = {
-	hidden: {
-		x: 300,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
 
 export const Ingredients = () => {
 	const [ingredients, setIngredients] = useState(imgData);
