@@ -82,7 +82,7 @@ export const StyledButtonDrop = styled.p`
 
 	:hover,
 	:focus {
-		font-size: calc(4px + 1vw);
+		font-size: ${(p) => p.theme.fontSizes.fs20};
 		transition: 0.3s ease;
 	}
 `;
