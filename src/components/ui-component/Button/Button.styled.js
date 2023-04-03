@@ -25,7 +25,7 @@ export const StyledButton = styled(Link)`
 	&:hover,
 	&:focus {
 		box-shadow: ${(p) => p.theme.shadowBtn};
-		font-size: calc(3px + 1vw);
+		font-size: ${(p) => p.theme.fontSizes.fs19};
 		transition: 0.3s ease;
 	}
 
