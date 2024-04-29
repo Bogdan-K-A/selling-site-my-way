@@ -1,62 +1,58 @@
-import React from "react";
 import { motion } from "framer-motion";
-
 import { Container } from "../common/Container/Container";
 import { Button } from "../ui-component/Button/Button";
-import { animation, animationImg } from "../../animate/animate";
-
+import { animation } from "../../animate/animate";
 import {
-	StyledHero,
-	StyledImg,
-	StyledText,
-	StyledTitle,
-	ContentWrapper,
-	StyledBox,
+  StyledHero,
+  StyledText,
+  StyledTitle,
+  ContentWrapper,
+  StyledBox,
 } from "./Hero.styled";
 
 export const Hero = () => {
-	return (
-		<StyledHero
-			id="hero"
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true }}>
-			<Container>
-				<StyledBox>
-					<ContentWrapper>
-						<StyledTitle custom={1} variants={animation}>
-							Burger Factory
-						</StyledTitle>
-						<StyledText custom={2} variants={animation}>
-							Your dreamed burger close to your locations!
-						</StyledText>
-						<motion.div custom={3} variants={animation}>
-							<Button
-								to="ingredient"
-								spy={true}
-								smooth={true}
-								offset={-10}
-								duration={500}
-								padding="8px 26px"
-								bgcolor="bgcolor">
-								Discover the ingredients
-							</Button>
-						</motion.div>
-					</ContentWrapper>
+  return (
+    <StyledHero
+      id="hero"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <Container>
+        <StyledBox>
+          <ContentWrapper>
+            <StyledTitle custom={1} variants={animation}>
+              Бігом у Травень!
+            </StyledTitle>
+            <StyledText custom={2} variants={animation}>
+              Виходь на новий рівень тренувань разом з нами!
+            </StyledText>
+            <StyledText custom={2} variants={animation}>
+              <span>6 травня </span>
+              стартують 14 бігові курси, <br />
+              які змінять твій погляд на тренування!
+            </StyledText>
 
-					<picture>
-						<source
-							media="(min-width: 991px)"
-							srcSet="../images/hero/Groupe_2.png"
-						/>
-						<source
-							media="(max-width: 991px)"
-							srcSet="../images/hero/Groupe_2@2x.png 2x"
-						/>
-						<StyledImg variants={animationImg} src="#" alt="" />
-					</picture>
-				</StyledBox>
-			</Container>
-		</StyledHero>
-	);
+            <motion.div
+              custom={3}
+              variants={animation}
+              style={{ marginTop: "50px" }}
+            >
+              <Button
+                to="format"
+                spy={true}
+                smooth={true}
+                offset={-10}
+                duration={500}
+                padding="8px 26px"
+                bgcolor="bgcolor"
+              >
+                Як це працює
+              </Button>
+            </motion.div>
+          </ContentWrapper>
+        </StyledBox>
+      </Container>
+    </StyledHero>
+  );
 };
