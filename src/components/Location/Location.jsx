@@ -9,31 +9,9 @@ import "leaflet/dist/leaflet.css";
 
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
+import { animationLeft, animationRight } from "../../animate/animate";
 
 import { StyledItem, StyledList, StyledMap } from "./Location.styled";
-
-const animationLeft = {
-	hidden: {
-		x: -300,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
-const animationRight = {
-	hidden: {
-		x: 300,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
 
 export const Location = () => {
 	const position = [46.52428262072865, 6.633050444374937];

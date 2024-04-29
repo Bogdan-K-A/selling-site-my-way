@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
 import { Button } from "../ui-component/Button/Button";
+import { animationBurgers } from "../../animate/animate";
 
 import {
 	DitailsListWrapper,
@@ -18,18 +19,6 @@ import {
 	StyledButtonDrop,
 	StyledCloceButton,
 } from "./Burgers.styled";
-
-const animation = {
-	hidden: {
-		y: 500,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		y: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
 
 export const Burgers = ({ openModal }) => {
 	const [name1, setName1] = useState("");
@@ -72,13 +61,13 @@ export const Burgers = ({ openModal }) => {
 			initial="hidden"
 			whileInView="visible"
 			viewport={{ amount: 0.2, once: true }}>
-			<motion.div custom={0.5} variants={animation}>
+			<motion.div custom={0.5} variants={animationBurgers}>
 				<Box sx={{ display: "flex", alignItems: "center" }}>
 					<Title margin="0 auto 50px">Burgers</Title>
 				</Box>
 			</motion.div>
 			<StyledList>
-				<StyledItem custom={1} variants={animation}>
+				<StyledItem custom={1} variants={animationBurgers}>
 					<StyledBoxItem>
 						<TitleCardMargin>1/4 Pound Cheese</TitleCardMargin>
 
@@ -117,7 +106,7 @@ export const Burgers = ({ openModal }) => {
 					)}
 				</StyledItem>
 
-				<StyledItem custom={2} variants={animation}>
+				<StyledItem custom={2} variants={animationBurgers}>
 					<StyledBoxItem>
 						<TitleCardMargin>Big Burger</TitleCardMargin>
 						<picture>
@@ -153,7 +142,7 @@ export const Burgers = ({ openModal }) => {
 						</StyledButtonDrop>
 					)}
 				</StyledItem>
-				<StyledItem custom={3} variants={animation}>
+				<StyledItem custom={3} variants={animationBurgers}>
 					<StyledBoxItem>
 						<TitleCardMargin>Pure Bacon</TitleCardMargin>
 						<picture>
@@ -190,7 +179,7 @@ export const Burgers = ({ openModal }) => {
 					)}
 				</StyledItem>
 			</StyledList>
-			<motion.div custom={4} variants={animation}>
+			<motion.div custom={4} variants={animationBurgers}>
 				<Box sx={{ display: "flex", justifyContent: "center" }}>
 					<Button onClick={openModal} padding="9px 32px" to="">
 						Order now

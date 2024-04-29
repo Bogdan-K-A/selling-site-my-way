@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { Container } from "../common/Container/Container";
 import { Button } from "../ui-component/Button/Button";
+import { animation, animationImg } from "../../animate/animate";
 
 import {
 	StyledHero,
@@ -13,29 +14,6 @@ import {
 	StyledBox,
 } from "./Hero.styled";
 
-const animation = {
-	hidden: {
-		x: -500,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
-
-const animationImg = {
-	hidden: {
-		x: 500,
-		opacity: 0,
-	},
-	visible: (custom) => ({
-		x: 0,
-		opacity: 1,
-		transition: { delay: custom * 0.2 },
-	}),
-};
 export const Hero = () => {
 	return (
 		<StyledHero
