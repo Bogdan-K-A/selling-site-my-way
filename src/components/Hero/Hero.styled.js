@@ -7,7 +7,7 @@ export const StyledHero = styled(motion.div)`
   width: 100%;
   height: 100vh;
   padding: 100px 0;
-  background: url("/images/hero/image61.jpg") no-repeat center/cover;
+  background: url("./images/hero/image61.jpg") no-repeat center/cover;
 
   &::before {
     content: "";
@@ -20,7 +20,7 @@ export const StyledHero = styled(motion.div)`
   }
 
   @media (max-width: 991px) {
-    background: url("/images/hero/image5.jpg") no-repeat center/cover;
+    background: url("./images/hero/image5.jpg") no-repeat center/cover;
   }
 `;
 
