@@ -34,7 +34,7 @@ export const TheStory = () => {
         </p>
       </TitleBox>
       <StyledBox>
-        <StyledImg src="../images/my_way_30days.png" alt="" />
+        <StyledImg src="./images/my_way_30days.png" alt="" />
 
         <ContentWrapper>
           <Title margin="0 0 20px">My Way 4 тижні</Title>

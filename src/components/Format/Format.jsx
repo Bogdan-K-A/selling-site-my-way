@@ -110,7 +110,7 @@ export const Format = () => {
             </StyledItem>
           </ul>
         </ContentWrapper>
-        <StyledImg src="../images/my_way_10km.png" alt="" />
+        <StyledImg src="./images/my_way_10km.png" alt="" />
       </StyledBox>
 
       <StyledBottomText>
@@ -122,11 +122,7 @@ export const Format = () => {
           забігу свого життя!
         </p>
         <ButtonBox>
-          <StiledButtonLink
-            href=""
-            padding="9px 32px"
-            bgcolor="bgcolor"
-          >
+          <StiledButtonLink href="" padding="9px 32px" bgcolor="bgcolor">
             <div style={{ display: "flex" }}>
               Чат підтримка
               <StiledIconTg />

@@ -46,28 +46,28 @@ export const Trainer = () => {
       <StyledRow>
         <StyledCol>
           <StyledItem>
-            <img src="../images/students/img-7.png" alt="" />
+            <img src="./images/students/img-7.png" alt="" />
           </StyledItem>
           <StyledItem>
-            <img src="../images/students/img-1.png" alt="" />
+            <img src="./images/students/img-1.png" alt="" />
           </StyledItem>
           <StyledItem>
-            <img src="../images/students/img-2.png" alt="" />
+            <img src="./images/students/img-2.png" alt="" />
           </StyledItem>
           <StyledItem>
-            <img src="../images/students/img-3.png" alt="" />
+            <img src="./images/students/img-3.png" alt="" />
           </StyledItem>
         </StyledCol>
 
         <StyledCol>
           <StyledItem>
-            <img src="../images/students/img-4.png" alt="" />
+            <img src="./images/students/img-4.png" alt="" />
           </StyledItem>
           <StyledItem>
-            <img src="../images/students/img-5.png" alt="" />
+            <img src="./images/students/img-5.png" alt="" />
           </StyledItem>
           <StyledItem>
-            <img src="../images/students/img-6.png" alt="" />
+            <img src="./images/students/img-6.png" alt="" />
           </StyledItem>
         </StyledCol>
       </StyledRow>

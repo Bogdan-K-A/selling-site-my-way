@@ -36,7 +36,7 @@ export const Format2 = () => {
         </p>
       </TitleBox>
       <StyledBox>
-        <StyledImg src="../images/my_way_21km.png" alt="" />
+        <StyledImg src="./images/my_way_21km.png" alt="" />
 
         <ContentWrapper>
           <Title margin="0 0 20px">My Way 21 км Підготовка 8 тижнів</Title>
