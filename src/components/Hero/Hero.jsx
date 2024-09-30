@@ -1,45 +1,62 @@
-import { motion } from "framer-motion";
 import { Container } from "../common/Container/Container";
 import { Button } from "../ui-component/Button/Button";
-import { animation } from "../../animate/animate";
 import {
   StyledHero,
   StyledText,
   StyledTitle,
-  ContentWrapper,
   StyledBox,
+  StyledItem,
+  StyledPoint,
 } from "./Hero.styled";
 
 export const Hero = () => {
   return (
-    <StyledHero
-      id="hero"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
+    <StyledHero id="hero" viewport={{ once: true }}>
       <Container>
         <StyledBox>
-          <ContentWrapper>
-            <StyledTitle custom={1} variants={animation}>
-              Бігом у Травень!
+          <div>
+            <StyledTitle>
+              Онлайн курс з бігу <span> "My Way"</span>
+              <br />
+              старт 3 червня
             </StyledTitle>
-            <StyledText custom={2} variants={animation}>
-              Виходь на новий рівень тренувань разом з нами!
-            </StyledText>
-            <StyledText custom={2} variants={animation}>
-              <span>6 травня </span>
-              стартують 14 бігові курси, <br />
-              які змінять твій погляд на тренування!
+            <StyledText>
+              Готуйся до свого найкращого забігу <br /> обери свою програму
             </StyledText>
 
-            <motion.div
-              custom={3}
-              variants={animation}
-              style={{ marginTop: "50px" }}
-            >
+            <ul>
+              <StyledItem>
+                <StyledPoint>
+                  <span></span>
+                </StyledPoint>
+                <p>
+                  4 тижні:
+                  <br /> Iдеальний старт для новачків у бігу
+                </p>
+              </StyledItem>
+              <StyledItem>
+                <StyledPoint>
+                  <span></span>
+                </StyledPoint>
+                <p>
+                  10 км 5 тижнів:
+                  <br /> Підготовка до подолання 10 км з комфортом
+                </p>
+              </StyledItem>
+              <StyledItem>
+                <StyledPoint>
+                  <span></span>
+                </StyledPoint>
+                <p>
+                  21 км 8 тижнів:
+                  <br /> Підготовка до півмарафонської дистанції
+                </p>
+              </StyledItem>
+            </ul>
+
+            <div style={{ marginTop: "50px" }}>
               <Button
-                to="format"
+                to="price"
                 spy={true}
                 smooth={true}
                 offset={-10}
@@ -47,10 +64,10 @@ export const Hero = () => {
                 padding="8px 26px"
                 bgcolor="bgcolor"
               >
-                Як це працює
+                Взяти участь
               </Button>
-            </motion.div>
-          </ContentWrapper>
+            </div>
+          </div>
         </StyledBox>
       </Container>
     </StyledHero>

@@ -7,13 +7,16 @@ import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
 import { imgData } from "./imgData";
 import { IngredientItem } from "./IngredientItem";
-import { animationLeft, animationRight } from "../../animate/animate";
 import {
   StyledBox,
   StyledMainText,
   StyledSwiper,
   IconPosition,
   StyledSwiperSlide,
+  StyledItem,
+  StyledRow,
+  StyledCol,
+  StyledSwiperBox,
 } from "./Trainer.styled";
 import { params } from "./swiperParams";
 
@@ -21,32 +24,55 @@ export const Trainer = () => {
   const [ingredients, setIngredients] = useState(imgData);
 
   return (
-    <MContainer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.4, once: true }}
-    >
+    <MContainer>
       <StyledBox>
-        <motion.div custom={1} variants={animationLeft}>
-          <Title margin="0 0 20px 0 ">Твій тренер Басенко Сергій</Title>
+        <motion.div>
+          <Title margin="0 0 20px 0 ">
+            Хто приведе вас до результату <br />
+          </Title>
         </motion.div>
 
-        <StyledMainText margin="10px" custom={2} variants={animationRight}>
+        <StyledMainText margin="10px">
           Провідний спеціаліст у світі олімпійської легкої атлетики з понад
-          двадцятирічним досвідом.
+          двадцятирічним досвідом тренер, <span>Басенко Сергій</span>.
         </StyledMainText>
 
-        <StyledMainText custom={5} variants={animationRight}>
+        <StyledMainText>
           Мої учні являються призерами Олімпійських ігор, Чемпіонатів Світу та
           Чемпіонатів Европи.
         </StyledMainText>
       </StyledBox>
 
-      <motion.div
-        custom={6}
-        variants={animationLeft}
-        style={{ position: "relative" }}
-      >
+      <StyledRow>
+        <StyledCol>
+          <StyledItem>
+            <img src="../images/students/img-7.png" alt="" />
+          </StyledItem>
+          <StyledItem>
+            <img src="../images/students/img-1.png" alt="" />
+          </StyledItem>
+          <StyledItem>
+            <img src="../images/students/img-2.png" alt="" />
+          </StyledItem>
+          <StyledItem>
+            <img src="../images/students/img-3.png" alt="" />
+          </StyledItem>
+        </StyledCol>
+
+        <StyledCol>
+          <StyledItem>
+            <img src="../images/students/img-4.png" alt="" />
+          </StyledItem>
+          <StyledItem>
+            <img src="../images/students/img-5.png" alt="" />
+          </StyledItem>
+          <StyledItem>
+            <img src="../images/students/img-6.png" alt="" />
+          </StyledItem>
+        </StyledCol>
+      </StyledRow>
+
+      <StyledSwiperBox style={{ position: "relative" }}>
         <StyledSwiper {...params}>
           {ingredients.map(({ id, src }) => (
             <StyledSwiperSlide key={id}>
@@ -57,7 +83,7 @@ export const Trainer = () => {
         <IconPosition>
           <p>Гортай</p>
         </IconPosition>
-      </motion.div>
+      </StyledSwiperBox>
     </MContainer>
   );
 };

@@ -5,10 +5,9 @@ import { motion } from "framer-motion";
 export const StyledHero = styled(motion.div)`
   position: relative;
   width: 100%;
-  height: 850px;
+  height: 100vh;
   padding: 100px 0;
-  margin: 60px 0 0 0;
-  background: url("/images/hero/image2.jpg") no-repeat top/cover;
+  background: url("/images/hero/image61.jpg") no-repeat center/cover;
 
   &::before {
     content: "";
@@ -21,12 +20,12 @@ export const StyledHero = styled(motion.div)`
   }
 
   @media (max-width: 991px) {
-    height: 700px;
-    padding: 40px 0 0 0;
+    background: url("/images/hero/image5.jpg") no-repeat center/cover;
   }
 `;
 
 export const StyledBox = styled(Box)`
+  margin-top: 100px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -36,41 +35,75 @@ export const StyledBox = styled(Box)`
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-`;
-
-export const ContentWrapper = styled.div`
-  margin-top: 92px;
-
-  @media (max-width: 991px) {
-    margin-top: 0;
-    margin-bottom: 40px;
+    margin: 0;
   }
 `;
 
 export const StyledTitle = styled(motion.h1)`
-  font-size: ${(p) => p.theme.fontSizes.fs84};
-  font-weight: ${(p) => p.theme.fontWeights.black};
+  font-size: ${(p) => p.theme.fontSizes.fs28};
+  font-weight: ${(p) => p.theme.fontWeights.regular};
   color: ${(p) => p.theme.colors.white};
 
   margin-bottom: 20px;
 
-  @media (max-width: 991px) {
-    font-size: ${(p) => p.theme.fontSizes.fs64};
+  span {
+    color: ${(p) => p.theme.colors.prymaryBtnColor};
+    font-weight: ${(p) => p.theme.fontWeights.bold};
   }
+
   @media (max-width: 555px) {
-    font-size: ${(p) => p.theme.fontSizes.fs36};
-    margin-bottom: 115px;
+    max-width: 300px;
+    margin: 0 auto 50px auto;
   }
 `;
 
 export const StyledText = styled(motion.p)`
-  font-size: ${(p) => p.theme.fontSizes.fs24};
-  font-weight: ${(p) => p.theme.fontWeights.bold};
+  font-size: ${(p) => p.theme.fontSizes.fs30};
+  font-weight: ${(p) => p.theme.fontWeights.semiBold};
   color: ${(p) => p.theme.colors.white};
   margin-bottom: 20px;
 
   @media (max-width: 555px) {
     font-size: ${(p) => p.theme.fontSizes.fs18};
+  }
+`;
+
+export const StyledItem = styled(motion.li)`
+  display: flex;
+  font-size: 16;
+  font-weight: 300;
+  color: ${(p) => p.theme.colors.white};
+  margin-bottom: 20px;
+  line-height: 1;
+
+  p {
+    text-align: left;
+  }
+`;
+
+export const StyledPoint = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+
+  span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: ${(p) => p.theme.colors.secondaryBtnColor};
+  }
+
+  @media (max-width: 555px) {
+    width: 10px;
+    height: 50px;
+    border-radius: 0;
+    background-color: ${(p) => p.theme.colors.secondaryBtnColor};
+    border: none;
   }
 `;

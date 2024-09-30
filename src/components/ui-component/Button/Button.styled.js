@@ -16,7 +16,7 @@ export const StyledButton = styled(Link)`
   font-size: ${(p) => p.theme.fontSizes.fs18};
   font-weight: ${(p) => p.theme.fontWeights.bold};
 
-  border-radius: ${(p) => p.theme.radii.r10};
+  border-radius: ${(p) => p.theme.radii.r20};
 
   cursor: pointer;
   transition: 0.3s ease;

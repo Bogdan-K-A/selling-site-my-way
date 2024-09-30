@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 export const StyledBox = styled(Box)`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: 991px) {
     flex-direction: column;
@@ -12,7 +13,20 @@ export const StyledBox = styled(Box)`
   }
 `;
 
+export const StyledCol = styled.div`
+  display: flex;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 export const StyledList = styled.ul`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
   @media (max-width: 991px) {
     display: ${({ display }) => display || ""};
     margin-top: 100px;
@@ -20,7 +34,7 @@ export const StyledList = styled.ul`
 `;
 
 export const StyledItem = styled.li`
-  padding: 30px 0;
+  color: ${(p) => p.theme.colors.white};
 
   .active {
     color: ${(p) => p.theme.colors.prymaryBtnColor};
@@ -31,16 +45,16 @@ export const StyledItem = styled.li`
     margin-right: 70px;
   }
 
-  @media (max-width: 1100px) {
+  /* @media (max-width: 1100px) {
     &:not(:last-child) {
       margin-right: 30px;
     }
-  }
+  } */
 
   @media (max-width: 991px) {
     padding: 0;
     margin-bottom: 30px;
-
+    color: ${(p) => p.theme.colors.text};
     &:not(:last-child) {
       margin-right: 0;
     }
@@ -48,7 +62,7 @@ export const StyledItem = styled.li`
 `;
 
 export const StyledLink = styled(Link)`
-  padding: 30px 0;
+  padding: 20px 0;
   text-transform: uppercase;
   cursor: pointer;
 
@@ -63,5 +77,13 @@ export const StyledLink = styled(Link)`
   @media (max-width: 991px) {
     padding: 0;
     font-size: ${(p) => p.theme.fontSizes.fs28};
+  }
+`;
+
+export const StyledLogoMobile = styled.div`
+  display: block;
+  margin: 0 100px;
+  @media (max-width: 991px) {
+    display: none;
   }
 `;

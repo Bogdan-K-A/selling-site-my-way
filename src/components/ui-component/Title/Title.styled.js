@@ -4,10 +4,10 @@ export const StyledTitle = styled.h2`
   padding: ${({ padding }) => padding || "0"};
   margin: ${({ margin }) => margin || "0"};
 
-  font-weight: ${(p) => p.theme.fontWeights.black};
-  font-size: ${(p) => p.theme.fontSizes.fs48};
+  font-weight: ${(p) => p.theme.fontWeights.extraBold};
+  font-size: ${(p) => p.theme.fontSizes.fs26};
 
   @media (max-width: 568px) {
-    font-size: ${(p) => p.theme.fontSizes.fs30};
+    text-align: center;
   }
 `;

@@ -16,6 +16,7 @@ export const theme = {
   shadowBtn: "rgba(0, 0, 0, 0.6) 5px 7px 18px;",
   radii: {
     r10: "10px",
+    r20: "20px",
     r26: "26px",
     r30: "30px",
     r50: "50%",

@@ -1,80 +1,150 @@
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
-import { animation, animationImg } from "../../animate/animate";
 import {
   StyledImg,
   ContentWrapper,
   StyledBox,
   StyledItem,
+  TitleBox,
+  StyledBoxIcon,
+  StyledBottomText,
+  StiledIconTg,
+  ButtonBox,
 } from "./Format.styled";
+import { IoIosCheckmark } from "react-icons/io";
+import { StiledButtonLink } from "../ui-component/Button/Button.styled";
+import { Button } from "../ui-component/Button/Button";
 
 export const Format = () => {
   return (
-    <MContainer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
-    >
+    <MContainer>
+      <TitleBox>
+        <p>
+          Готуйся до свого найкращого забігу на 10 км з <b>My Way 10 км</b>{" "}
+          Підготовка протягом 5 тижнів!
+        </p>
+        <p>
+          Чи ти збираєшся фінішувати чи покращити свій попередній результат, наш
+          курс допоможе тобі досягти твоїх цілей!
+        </p>
+        <Title margin="20px 0 20px">
+          Під час 5-ти тижневого курсу ти отримаєш:
+        </Title>
+      </TitleBox>
       <StyledBox>
         <ContentWrapper>
-          <Title margin="0 0 30px">ФОРМАТ КУРСУ</Title>
+          <Title margin="0 0 20px">My Way 10 км Підготовка 5 тижнів</Title>
           <ul>
-            <StyledItem custom={1} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
+            <StyledItem>
+              <StyledBoxIcon>
+                <IoIosCheckmark />
+              </StyledBoxIcon>
+
               <p>
-                14 днів тренувань, які піднімуть твою витривалість і швидкість
-                на новий рівень.
+                <span>
+                  <em>20 бігових тренувань</em>
+                </span>
+                , що допоможуть підготувати твоє тіло до інтенсивного забігу.
               </p>
             </StyledItem>
-            <StyledItem custom={2} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
+            <StyledItem>
+              <StyledBoxIcon>
+                <IoIosCheckmark />
+              </StyledBoxIcon>
+
               <p>
-                14 днів доступу до контенту та чату підтримки для постійного
-                підтримання і мотивації.
+                <span>
+                  <em>5 вебінарів з тренером</em>
+                </span>
+                , де отримаєш професійні поради та відповіді на всі свої
+                запитання.
               </p>
             </StyledItem>
-            <StyledItem custom={3} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
+            <StyledItem>
+              <StyledBoxIcon>
+                <IoIosCheckmark />
+              </StyledBoxIcon>
+
               <p>
-                8 бігових онлайн тренувань, спрямованих на підвищення
-                витривалості, швидкості та формування рельєфу тіла. Всі
-                тренування проводить тренер онлайн та зберігається запис.
+                <span>
+                  <em>10 тренувань з мобіліті </em>
+                </span>
+                для підтримки гнучкості та попередження травм.
               </p>
             </StyledItem>
-            <StyledItem custom={4} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
-              <p>2 відновлюючі йога-сесії з дипломованим йога тренером.</p>
-            </StyledItem>
-            <StyledItem custom={5} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
+            <StyledItem>
+              <StyledBoxIcon>
+                <IoIosCheckmark />
+              </StyledBoxIcon>
+
               <p>
-                4 тренування з мобільності в суглобах, що дадуть гнучкість
-                суглобам та знімуть напругу в тілі.
+                <span>
+                  <em>5 тренувань з йоги </em>
+                </span>
+                для збалансування і розслаблення м'язів.
               </p>
             </StyledItem>
-            <StyledItem custom={6} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
+            <StyledItem>
+              <StyledBoxIcon>
+                <IoIosCheckmark />
+              </StyledBoxIcon>
+
               <p>
-                2 блоки силових вправ для зміцнення м’язів та підвищення
-                стійкості.
+                <span>
+                  <em>5 блоків Спеціальних Бігових Вправ </em>
+                </span>
+                для підвищення ефективності та швидкості.
               </p>
             </StyledItem>
-            <StyledItem custom={6} variants={animation}>
-              <img src="./images/logo/circle1.svg" alt="" />
+            <StyledItem>
+              <StyledBoxIcon>
+                <IoIosCheckmark />
+              </StyledBoxIcon>
+
               <p>
-                2 спеціалізовані блоки вправ для поліпшення техніки бігу та
-                досягнення максимально швидких змін у техніці бігу.
+                <span>
+                  <em>5 блоків Силових Вправ </em>
+                </span>
+                для зміцнення м'язів та підвищення витривалості.
               </p>
             </StyledItem>
           </ul>
         </ContentWrapper>
-
-        <StyledImg
-          variants={animationImg}
-          src="../images/for-whom/img-12.webp"
-          alt=""
-        />
+        <StyledImg src="../images/my_way_10km.png" alt="" />
       </StyledBox>
+
+      <StyledBottomText>
+        <p>
+          <b> Не втрачай можливості стати кращою версією себе!</b>
+        </p>
+        <p>
+          Приєднуйся до My Way 10 км Підготовка та підготуйся до найкращого
+          забігу свого життя!
+        </p>
+        <ButtonBox>
+          <StiledButtonLink
+            href=""
+            padding="9px 32px"
+            bgcolor="bgcolor"
+          >
+            <div style={{ display: "flex" }}>
+              Чат підтримка
+              <StiledIconTg />
+            </div>
+          </StiledButtonLink>
+          <Button
+            to="price"
+            spy={true}
+            smooth={true}
+            offset={-10}
+            duration={500}
+            padding="8px 26px"
+            bgcolor="bgcolor"
+          >
+            Придбати курс
+          </Button>
+        </ButtonBox>
+      </StyledBottomText>
     </MContainer>
   );
 };

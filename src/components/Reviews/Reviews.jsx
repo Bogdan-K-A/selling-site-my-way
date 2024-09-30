@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
-import { animationLeft, animationRight } from "../../animate/animate";
 import {
   StyledSwiperList,
   StyledSwiperItem,
@@ -18,17 +17,13 @@ import { params } from "./swiperParams";
 
 export const Reviews = () => {
   return (
-    <MContainer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
-    >
-      <motion.div custom={1} variants={animationLeft}>
+    <MContainer>
+      <motion.div>
         <Box sx={{ display: "flex", alignItem: "center" }}>
           <Title margin="0 auto 30px">Відгуки</Title>
         </Box>
       </motion.div>
-      <motion.div custom={2} variants={animationRight}>
+      <motion.div>
         <StyledSwiperList {...params}>
           <StyledSwiperItem>
             <StyledItemContent>

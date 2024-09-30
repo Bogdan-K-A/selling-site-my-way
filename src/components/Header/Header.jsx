@@ -8,11 +8,11 @@ import { NavBar } from "../NavBar/NavBar.jsx";
 import {
   DropMenuWrapper,
   NavWrapper,
-  StyledBox,
   StyledHeader,
-  StyledLogo,
+  FlexBoxIcons,
 } from "./Header.styled";
-import { Link } from "react-scroll";
+import { StyledInst, StyledTg } from "./MobileMenu/MobileMenu.styled.js";
+import { BsInstagram, BsTelegram } from "react-icons/bs";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,27 +25,26 @@ export const Header = () => {
   return (
     <StyledHeader>
       <Container>
-        <StyledBox>
-          <NavWrapper>
-            <Link
-              to="hero"
-              spy={true}
-              smooth={true}
-              offset={-200}
-              duration={500}
-            >
-              <StyledLogo src="./images/logo/logo.png" alt="" />
-            </Link>
-            <NavBar display="none" />
-            {isOpen ? (
-              <MobileMenu isOpen={isOpen} toggle={toggle} />
-            ) : (
-              <DropMenuWrapper>
-                <AiOutlineMenu size={"2em"} onClick={toggle} />
-              </DropMenuWrapper>
-            )}
-          </NavWrapper>
-        </StyledBox>
+        <NavWrapper>
+          <NavBar display="none" />
+
+          <FlexBoxIcons>
+            <StyledTg href="">
+              <BsTelegram size={30} />
+            </StyledTg>
+            <StyledInst href="">
+              <BsInstagram size={30} />
+            </StyledInst>
+          </FlexBoxIcons>
+
+          {isOpen ? (
+            <MobileMenu isOpen={isOpen} toggle={toggle} />
+          ) : (
+            <DropMenuWrapper>
+              <AiOutlineMenu size={"2em"} onClick={toggle} />
+            </DropMenuWrapper>
+          )}
+        </NavWrapper>
       </Container>
     </StyledHeader>
   );

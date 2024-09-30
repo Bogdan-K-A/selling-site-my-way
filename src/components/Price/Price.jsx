@@ -2,115 +2,152 @@ import { Box } from "@mui/system";
 import { motion } from "framer-motion";
 import { MContainer } from "../common/Container/Container";
 import { Title } from "../ui-component/Title/Title";
-import { animationBurgers } from "../../animate/animate";
 import {
   StyledItem,
   StyledList,
   TitleCardMargin,
   StyledBoxItem,
   StyledPrice,
-  BonusBox,
-  StyledContentList,
+  StiledBorder,
 } from "./Price.styled";
 import { StiledButtonLink } from "../ui-component/Button/Button.styled";
 
 export const Price = () => {
   return (
-    <MContainer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
-    >
-      <motion.div custom={0.5} variants={animationBurgers}>
+    <MContainer>
+      <motion.div>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Title margin="0 auto 50px">Обери свій формат</Title>
+          <Title margin="0 auto 30px">Обери свій курс</Title>
         </Box>
       </motion.div>
       <StyledList>
-        <StyledItem custom={1} variants={animationBurgers}>
-          <div>
-            <StyledBoxItem>
-              <TitleCardMargin>СТАНДАРТ</TitleCardMargin>
-              <StyledPrice>1,500₴</StyledPrice>
-            </StyledBoxItem>
+        {/* 1 */}
+        <StyledItem>
+          <div style={{ margin: "0 0 30px 0" }}>
+            <TitleCardMargin>My Way 4 тижні</TitleCardMargin>
 
-            <StyledContentList>
-              <li>
-                <p>14 днів курсу + 14 днів доступу </p>
-              </li>
-              <li>
-                <p>Чат підтримки 28 днів</p>
-              </li>
-              <li>
-                <p>Онлайн тренування</p>
-              </li>
-              <li>
-                <p>Відео розминки</p>
-              </li>
-              <li>
-                <p>Відеоуроки бігових та силових вправ</p>
-              </li>
-            </StyledContentList>
+            <p>
+              Для бажаючих почати бігати чи відновити свій біг або підтримувати
+              свою фізичну форму
+            </p>
           </div>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "80px",
-            }}
-          >
-            <StiledButtonLink
-              href="https://secure.wayforpay.com/button/bf26dd4526256"
-              padding="9px 32px"
-            >
-              Придбати
-            </StiledButtonLink>
-          </Box>
-        </StyledItem>
-
-        <StyledItem custom={2} variants={animationBurgers}>
           <div>
-            <StyledBoxItem>
-              <TitleCardMargin>ЗІ ЗВОРОТНІМ ЗВ'ЯЗКОМ</TitleCardMargin>
-              <StyledPrice>2,500₴</StyledPrice>
-            </StyledBoxItem>
-            <StyledContentList>
-              <li>
-                <p>14 днів курсу + 14 днів доступу</p>
-              </li>
-              <li>
-                <p>
-                  Аналіз графіків особисто тренером та надання індивідуальних
-                  настанов та корегування
-                </p>
-              </li>
-              <li>
-                <p>Аналіз техніки бігу та пояснення помилок</p>
-              </li>
-              <li>
-                <p>Пошук шляхів для покращення техніки бігу</p>
-              </li>
-            </StyledContentList>
+            <p>
+              Наші 4 тижні бігових курсів пропонують не лише виклик, а й
+              справжній досвід, який змінить твоє сприйняття бігу та твоє тіло.{" "}
+            </p>
           </div>
 
-          <BonusBox>
-            <p>Зворотній зв’язок після тренувань, коментарі графіків пульсу.</p>
-
+          <div style={{ padding: "20px" }}>
+            <StyledBoxItem>
+              <StyledPrice>40 €</StyledPrice>
+            </StyledBoxItem>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "15px",
               }}
             >
-              <StiledButtonLink
-                href="https://secure.wayforpay.com/button/be51ee5ae8cfa"
-                padding="9px 32px"
-              >
-                Придбати
+              <StiledButtonLink href="" padding="9px 32px">
+                Придбати курс
               </StiledButtonLink>
             </Box>
-          </BonusBox>
+          </div>
+        </StyledItem>
+
+        {/* 2 */}
+        <StyledItem>
+          <div>
+            <StyledBoxItem>
+              <TitleCardMargin>My Way 10 км 5 тижнів</TitleCardMargin>
+              <p>
+                Підготовка до забігу 10 км. Для початківців чи бігаючих
+                покращити результат
+              </p>
+            </StyledBoxItem>
+          </div>
+          <div>
+            <StiledBorder>
+              <StyledBoxItem>
+                <TitleCardMargin>Загальний</TitleCardMargin>
+                <StyledPrice>77 €</StyledPrice>
+              </StyledBoxItem>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <StiledButtonLink href="" padding="9px 32px">
+                  Придбати курс
+                </StiledButtonLink>
+              </Box>
+            </StiledBorder>
+            <StiledBorder>
+              <StyledBoxItem>
+                <TitleCardMargin>Індивідуальний</TitleCardMargin>
+                <StyledPrice>150 €</StyledPrice>
+              </StyledBoxItem>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <StiledButtonLink href="" padding="9px 32px">
+                  Придбати курс
+                </StiledButtonLink>
+              </Box>
+            </StiledBorder>
+          </div>
+        </StyledItem>
+        <StyledItem>
+          <div>
+            <StyledBoxItem>
+              <TitleCardMargin>My Way 21 км 8 тижнів</TitleCardMargin>
+              <p>Фінішувати 21 км чи покрищити рузультат </p>
+              {/* <StyledPrice>0,000€</StyledPrice> */}
+            </StyledBoxItem>
+          </div>
+          <div>
+            {" "}
+            <StiledBorder>
+              <StyledBoxItem>
+                <TitleCardMargin>Загальний</TitleCardMargin>
+                <StyledPrice>120 €</StyledPrice>
+              </StyledBoxItem>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <StiledButtonLink href="" padding="9px 32px">
+                  Придбати курс
+                </StiledButtonLink>
+              </Box>
+            </StiledBorder>
+            <StiledBorder>
+              <StyledBoxItem>
+                <TitleCardMargin>Індивідуальний</TitleCardMargin>
+                <StyledPrice>250 €</StyledPrice>
+              </StyledBoxItem>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <StiledButtonLink href="" padding="9px 32px">
+                  Придбати курс
+                </StiledButtonLink>
+              </Box>
+            </StiledBorder>
+          </div>
         </StyledItem>
       </StyledList>
     </MContainer>

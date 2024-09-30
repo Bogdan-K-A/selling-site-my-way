@@ -1,13 +1,11 @@
-export const iconAnimate = {
-  animate: {
-    x: [0, 50, -50, 0],
+export const imgAnimate = {
+  hidden: {
+    scale: 0.5,
+    opacity: 0,
   },
-
-  transition: {
-    duration: 2,
-    ease: "easeInOut",
-    times: [0.3, 0.2, 0, 0.2, 0.3],
-    repeat: Infinity,
-    repeatDelay: 2,
-  },
+  visible: (custom) => ({
+    scale: 1,
+    opacity: 1,
+    transition: { delay: custom * 0.2 },
+  }),
 };
