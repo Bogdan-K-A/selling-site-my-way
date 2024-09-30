@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/selling-site-my-way/static/css/main.aa6f8b8d.css",
-    "main.js": "/selling-site-my-way/static/js/main.3c9e67b2.js",
+    "main.js": "/selling-site-my-way/static/js/main.46cca9fd.js",
     "index.html": "/selling-site-my-way/index.html",
     "main.aa6f8b8d.css.map": "/selling-site-my-way/static/css/main.aa6f8b8d.css.map",
-    "main.3c9e67b2.js.map": "/selling-site-my-way/static/js/main.3c9e67b2.js.map"
+    "main.46cca9fd.js.map": "/selling-site-my-way/static/js/main.46cca9fd.js.map"
   },
   "entrypoints": [
     "static/css/main.aa6f8b8d.css",
-    "static/js/main.3c9e67b2.js"
+    "static/js/main.46cca9fd.js"
   ]
 }
